@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conference Dashboard</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body ng-app="dashboard" ng-controller="DashboardController as vm">
+  <h1>Conference Dashboard</h1>
+  <div id="room">
+    <h3 ng-show="vm.noParticipants" class="no-participants">No participants at the moment</h3>
+    <conference-participant ng-repeat="(sid, participant) in vm.participants" info="participant" time="vm.times[sid]">
+    </conference-participant>
+  </div>
+  
+  <div id="console">
+    <p>> Welcome to your conference dashboard!</p>
+    <p ng-repeat="log in vm.logs track by $index">> {{log}}</p>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+  <script src="dashboard.module.js"></script>
+  <script src="conference.service.js"></script>
+  <script src="conference-participant.directive.js"></script>
+  <script src="dashboard.controller.js"></script>
+</body>
+</html>

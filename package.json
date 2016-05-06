@@ -1,0 +1,22 @@
+{
+  "name": "conference-dashboard",
+  "version": "1.0.0",
+  "description": "A dashboard for Twilio Conferences",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch . index.js"
+  },
+  "author": "Dominik Kundel <dominik.kundel@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "nodemon": "^1.9.2",
+    "q": "^1.4.1",
+    "request": "^2.72.0",
+    "socket.io": "^1.4.6",
+    "twilio": "^2.9.1"
+  }
+}

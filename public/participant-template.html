@@ -1,0 +1,16 @@
+<div class="participant" ng-init="profile = info.profile">
+  <div class="participant-left">
+    <div class="participant-img-wrapper">
+      <img ng-src="{{profile.picture}}" alt="{{info.sid}}" class="participant-img">
+      <button class="participant-mute-button" ng-class="{muted: info.muted}" ng-click="muteParticipant(info.muted, info.sid, info.conference)">
+        <i ng-show="!info.muted" class="fa fa-microphone fa-3x"></i>
+        <i ng-show="info.muted" class="fa fa-microphone-slash fa-3x"></i>
+      </button>
+    </div>
+  </div>
+  <div class="participant-right">
+    <div class="participant-name">{{profile.name}}</div>
+    <div class="participant-number">{{info.number}}</div>
+    <div class="participant-time">{{time.minutes() ? '' : '00:'}}{{time.format('mm:ss')}}</div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+body, html {
+  margin: 0;
+  padding: 10px 20px;
+  background: #272726;
+  color: #fff;
+  font-family: 'Helvetica Light', Helvetica, sans-serif;
+}
+
+#room {
+  border: 2px solid #686865;
+  background: #686865;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 15px;
+}
+
+#console {
+  font-family: 'Share Tech Mono', 'Courier New', Courier, fixed-width;
+  color: #686865;
+  padding: 10px;
+  border: 2px solid #686865;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+.participant {
+  display: flex;
+  text-align: center;
+}
+
+.participant-mute-button {
+  border: none;
+  color: rgba(255,255,255, 0.7);
+  position: absolute;
+  border-radius: 100%;
+  padding: 0;
+  bottom: 50%;
+  right: 50%;
+  display: none;
+  background: none;
+  transform: translate(50%, 50%);
+  cursor: pointer;
+}
+
+.participant-img {
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+}
+
+.participant-img-wrapper {
+  position: relative;
+}
+
+.participant-img-wrapper:hover .participant-mute-button {
+  display: block;
+}
+
+.participant-mute-button.muted {
+  color: #fff;
+  display: block;
+}
+
+.participant-right {
+  padding-left: 20px;
+  align-self: center;
+}
+
+.participant-name {
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+.no-participants {
+  font-family: 'Share Tech Mono', 'Courier New', Courier, fixed-width;
+  color: #272726;
+}
+
+.participant-number, .participant-time {
+  font-family: 'Share Tech Mono', 'Courier New', Courier, fixed-width;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
