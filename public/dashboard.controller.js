@@ -2,22 +2,15 @@
   angular.module('dashboard')
     .controller('DashboardController', DashboardController);
   
-  DashboardController.$inject = ['Conference', '$scope', '$log', '$interval', 'moment']
+  DashboardController.$inject = ['$interval', 'moment']
 
-  function DashboardController(Conference, $scope, $log, $interval, moment) {
+  function DashboardController($interval, moment) {
     var vm = this;
     vm.logs = [];
     vm.noParticipants = true;
     vm.times = {};
     
-    $scope.$on('conferenceStatus.update', function (evt, data) {
-      $scope.$apply(function () {
-        vm.logs.push(data.message);
-        vm.participants = Conference.getParticipants();
-        vm.noParticipants = Object.keys(vm.participants).length === 0;
-      })
-    });
-    
+    // update the times for every call periodically
     $interval(function () {
       if (vm.participants) {
         vm.times = {};

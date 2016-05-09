@@ -2,44 +2,16 @@
   angular.module('dashboard')
     .factory('Conference', ConferenceService);
 
-  ConferenceService.$inject = ['$http', 'io', '$rootScope'];
+  ConferenceService.$inject = ['$http'];
 
-  function ConferenceService($http, io, $rootScope, $interval) {
-    var participants = {};
-    var socket = io();
-    
-    var events = [ 
-      'conference-start',
-      'conference-end',
-      'participant-join',
-      'participant-leave',
-      'participant-mute',
-      'participant-unmute'
-    ]
-    
-    events.forEach(function (event) {
-      socket.on(event, function (data) {
-        var eventData = {
-          event: event,
-          data: data,
-          message: getEventMessage(event, data)
-        };
-        
-        if ('participant-join') {
-          data.joined = Date.now();
-        }
-        
-        if (event === 'participant-leave') {
-          delete participants[data.sid];
-        } else if (event.indexOf('participant-') === 0) {
-          participants[data.sid] = data;
-        }
-        
-        
-        $rootScope.$broadcast('conferenceStatus.update', eventData);
-      });
-    });
-    
+  function ConferenceService($http) {
+
+    initialize();
+
+    function initialize() {
+      
+    }
+
     function getParticipants() {
       return participants;
     }
