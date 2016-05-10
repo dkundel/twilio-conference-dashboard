@@ -17,6 +17,7 @@ app.use(bodyParser.json())
 
 // configure routes
 app.post('/mute', require('./lib/mute'));
+app.all('/voice', require('./lib/voice'));
 
 // start server
 server.listen(port, () => {

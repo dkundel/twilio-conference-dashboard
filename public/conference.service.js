@@ -2,9 +2,10 @@
   angular.module('dashboard')
     .factory('Conference', ConferenceService);
 
-  ConferenceService.$inject = ['$http'];
+  ConferenceService.$inject = ['$http', 'io', '$rootScope'];
 
-  function ConferenceService($http) {
+  function ConferenceService($http, io, $rootScope) {
+    var participants = {};
 
     initialize();
 
