@@ -18,8 +18,8 @@
     "nodemon": "^1.9.2",
     "q": "^1.4.1",
     "request": "^2.72.0",
-    "socket.io": "2.0.2",
-    "twilio": "^3.5.0",
+    "socket.io": "^1.4.6",
+    "twilio": "^2.9.1",
     "snyk": "^1.69.0"
   },
   "snyk": true
