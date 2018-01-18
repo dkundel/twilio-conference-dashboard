@@ -6,3 +6,9 @@ patch:
   'npm:moment:20170905':
     - twilio > moment:
         patched: '2018-01-18T16:05:32.239Z'
+  'npm:debug:20170905':
+    - socket.io > socket.io-adapter > socket.io-parser > debug:
+        patched: '2018-01-18T16:42:25.830Z'
+  'npm:ms:20170412':
+    - socket.io > socket.io-adapter > socket.io-parser > debug > ms:
+        patched: '2018-01-18T16:42:25.830Z'
