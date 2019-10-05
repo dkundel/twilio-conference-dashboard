@@ -20,7 +20,7 @@
     "request": "^2.72.0",
     "socket.io": "2.0.2",
     "twilio": "^3.5.0",
-    "snyk": "^1.69.0"
+    "snyk": "^1.231.0"
   },
   "snyk": true
 }
